@@ -1,0 +1,13 @@
+pi=22/7
+print(pi)
+print(type(pi))
+
+
+for=4
+
+
+p=10000
+r=5
+t=3
+SI=(p * r * t) / 100
+print("simple interest=" , SI)
