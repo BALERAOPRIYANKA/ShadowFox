@@ -1,0 +1,165 @@
+# ==========================
+# 1. VARIABLES
+# ==========================
+
+# 1. Store 22/7 in pi and check data type
+pi = 22 / 7
+print("Value of pi:", pi)
+print("Data type of pi:", type(pi))
+
+# 2. Using 'for' as a variable
+# for = 4    # This gives SyntaxError because 'for' is a Python keyword.
+
+print("\n'for' cannot be used as a variable because it is a reserved keyword.")
+
+# 3. Simple Interest
+principal = float(input("\nEnter Principal Amount: "))
+rate = float(input("Enter Rate of Interest: "))
+time = 3
+
+SI = (principal * rate * time) / 100
+print("Simple Interest for 3 years =", SI)
+
+
+# ==========================
+# 2. LIST
+# ==========================
+
+justice_league = ["Superman", "Batman", "Wonder Woman", "Flash", "Aquaman", "Green Lantern"]
+
+print("\nNumber of members:", len(justice_league))
+
+justice_league.extend(["Batgirl", "Nightwing"])
+print("After adding Batgirl and Nightwing:", justice_league)
+
+justice_league.remove("Wonder Woman")
+justice_league.insert(0, "Wonder Woman")
+print("Wonder Woman becomes leader:", justice_league)
+
+justice_league.remove("Green Lantern")
+justice_league.insert(justice_league.index("Aquaman") + 1, "Green Lantern")
+print("Green Lantern moved:", justice_league)
+
+justice_league = ["Cyborg", "Shazam", "Hawkgirl", "Martian Manhunter", "Green Arrow"]
+print("New Team:", justice_league)
+
+justice_league.sort()
+print("Sorted List:", justice_league)
+print("New Leader:", justice_league[0])
+
+
+# ==========================
+# 3. BMI
+# ==========================
+
+height = float(input("\nEnter height (m): "))
+weight = float(input("Enter weight (kg): "))
+
+bmi = weight / (height ** 2)
+
+print("BMI =", round(bmi, 2))
+
+if bmi >= 30:
+    print("Obesity")
+elif bmi >= 25:
+    print("Overweight")
+elif bmi >= 18.5:
+    print("Normal")
+else:
+    print("Underweight")
+
+
+# ==========================
+# 4. CITY -> COUNTRY
+# ==========================
+
+Australia = ["Sydney", "Melbourne", "Brisbane", "Perth"]
+UAE = ["Dubai", "Abu Dhabi", "Sharjah", "Ajman"]
+India = ["Mumbai", "Bangalore", "Chennai", "Delhi"]
+
+city = input("\nEnter city name: ")
+
+if city in Australia:
+    print(city, "is in Australia")
+elif city in UAE:
+    print(city, "is in UAE")
+elif city in India:
+    print(city, "is in India")
+else:
+    print("City not found")
+
+
+# ==========================
+# 5. CHECK TWO CITIES
+# ==========================
+
+city1 = input("\nEnter first city: ")
+city2 = input("Enter second city: ")
+
+if city1 in Australia and city2 in Australia:
+    print("Both cities are in Australia")
+elif city1 in UAE and city2 in UAE:
+    print("Both cities are in UAE")
+elif city1 in India and city2 in India:
+    print("Both cities are in India")
+else:
+    print("They don't belong to the same country")
+
+
+# ==========================
+# 6. DIE ROLL
+# ==========================
+
+import random
+
+count6 = 0
+count1 = 0
+two6 = 0
+previous = 0
+
+print("\nDice Rolls:")
+
+for i in range(20):
+    roll = random.randint(1, 6)
+    print(roll, end=" ")
+
+    if roll == 6:
+        count6 += 1
+
+    if roll == 1:
+        count1 += 1
+
+    if previous == 6 and roll == 6:
+        two6 += 1
+
+    previous = roll
+
+print("\n\nNumber of 6s:", count6)
+print("Number of 1s:", count1)
+print("Two consecutive 6s:", two6)
+
+
+# ==========================
+# 7. JUMPING JACKS
+# ==========================
+
+completed = 0
+
+for i in range(10):
+    print("\nPerform 10 Jumping Jacks.")
+    completed += 10
+
+    if completed == 100:
+        print("Congratulations! You completed 100 jumping jacks.")
+        break
+
+    tired = input("Are you tired? (yes/no): ").lower()
+
+    if tired == "yes" or tired == "y":
+        skip = input("Do you want to skip the remaining sets? (yes/no): ").lower()
+
+        if skip == "yes" or skip == "y":
+            print("You completed a total of", completed, "jumping jacks.")
+            break
+
+    print("Remaining jumping jacks:", 100 - completed)
